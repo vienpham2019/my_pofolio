@@ -14,24 +14,24 @@ class Projects extends Component {
         return(
             <section id="projects" style={{minHeight: '80vh'}}>
 
-                <div class="row">
+                <div className="row">
 
-                    <div class="twelve columns collapsed">
+                    <div className="twelve columns collapsed">
                         
                         <h1>My Projects</h1>
 
                         <div id="portfolio-wrapper">
                             {my_projects.map(project => 
-                                <div class="portfolio-item">
-                                    <div class="item-wrap">
+                                <div className="portfolio-item">
+                                    <div className="item-wrap">
                                         <a href="#modal" onClick={() => this.setState({project})}>
                                             <img alt="ca" src={require(`./${project.image}`)} />
-                                            <div class="overlay">
-                                                <div class="portfolio-item-meta">
-                                                    <h5>{project.title}</h5>
+                                            <div className="overlay">
+                                                <div className="portfolio-item-meta">
+                                                    <h5 style={{float: 'left'}}>{project.title}</h5>
                                                 </div>
                                             </div>
-                                            <div class="link-icon"><i class="icon-plus"></i></div>
+                                            <div className="link-icon"><i className="icon-plus"></i></div>
                                         </a>
                                     </div>
                                 </div>  

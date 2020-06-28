@@ -1,9 +1,19 @@
 const my_projects = [
     {
+        title: "Maze Generator", 
+        description: "Maze generation algorithms are automated methods for the creation of mazes.",
+        details: ["Utilized React and designed with custom Css for front-end.", "Deploy application to Firebase."], 
+        tools: "React | Redux | HTML | CSS | Bootstrap",
+        github: "https://github.com/vienpham2019/Maze_generator",
+        demo: "https://mazegenerator-a4b1a.firebaseapp.com/",
+        video: false,
+        image: "project_img/maze_generator.png"
+    },
+    {
         title: "Vintage Village",
         description: "Vintage Village will exceed your expectations in every way. A serene setting where you can enjoy nature and relish luxury and comfort. And where there’s always something new to enjoy. A place where we’ll indulge your every wish and help you rediscover the simple things in life.",
         details: ["Utilized React/Redux for front-end." , "Deploy application on Heroku." , "Designed the frontend with Bootstrap and custom CSS.", "Used NodeJS for back-end and MongoDB for database."],
-        tools: "NodeJS | Express | React | Redux | HTML | CSS | Bootstra | MongoDB",
+        tools: "NodeJS | Express | React | Redux | HTML | CSS | Bootstrap | MongoDB",
         github: "https://github.com/vienpham2019/beachResort",
         demo: "https://beackresortsdemo.herokuapp.com/",
         video: false,
