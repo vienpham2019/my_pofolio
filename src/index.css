@@ -1,0 +1,28 @@
+
+.skills li{
+  color: rgb(255, 255, 255);
+}
+
+.skills i {
+  color: rgb(68, 221, 226);
+  margin-right: 8px;
+}
+
+#portfolio-wrapper{
+  text-align: center;
+}
+
+.portfolio-item{
+  display: inline-block;
+  margin: 12px;
+}
+
+.item-wrap{
+  border-radius: 5px;
+}
+
+.portfolio-item img{
+  width: 18em;
+  height: 14em;
+}
+
