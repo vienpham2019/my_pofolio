@@ -4,7 +4,6 @@ class Header extends Component {
     render(){
         return(
             <header id="home">
-
                 <nav id="nav-wrap">
 
                     <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
@@ -73,7 +72,6 @@ class Header extends Component {
                 <p class="scrolldown">
                     <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
                 </p>
-
             </header>
         )
     }

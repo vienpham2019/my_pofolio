@@ -36,19 +36,10 @@ class About extends Component {
                                         <i class="fas fa-map-marker"></i> Houston, Texas
                                     </span> <br/>
                                     <span>
-                                        <i class="fas fa-phone"></i> (502) 296 0606
-                                    </span><br/>
-                                    <span>
                                         <i class="fas fa-envelope"></i> vienpham2019@gmail.com
                                     </span>
                                 </p>
 
-                            </div>
-
-                            <div class="columns download">
-                                <p>
-                                    <a href="#" class="button"><i class="fa fa-download"></i>Download Resume</a>
-                                </p>
                             </div>
 
                         </div> 
