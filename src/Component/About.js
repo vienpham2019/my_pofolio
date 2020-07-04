@@ -1,4 +1,5 @@
 import React , {Component} from 'react'
+import Resume from './Resume'
 
 class About extends Component {
     constructor(){
@@ -41,6 +42,8 @@ class About extends Component {
                                 </p>
 
                             </div>
+
+                            <Resume /> 
 
                         </div> 
 
