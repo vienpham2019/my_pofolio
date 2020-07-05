@@ -1,5 +1,6 @@
 import React , {Component} from 'react'
 import my_projects from './my_projects'
+import {link , about_paragraph , skill_paragraph , work_experience , educations} from './resume_infomation'
 import jsPDF from 'jspdf'
 
 class Resume extends Component {
@@ -29,30 +30,28 @@ class Resume extends Component {
         doc.text('Software Engineer' , x , resume_h)
 
         // links
-        doc.setTextColor(31, 93, 187)
-        doc.setDrawColor(31, 93, 187)
         doc.setFontStyle('normal')
-        const link = [
-            ['vienpham2019@gmail.com', 'vienpham2019@gmail.com'],
-            ['Github', 'https://github.com/vienpham2019'],
-            ['Blog' , 'https://medium.com/@vienpham2019'], 
-            ['LinkedIn', 'https://www.linkedin.com/in/vien-pham-7529931a5/'],
-            ['Portfolio', 'https://vienp.com']
-        ]
         let link_x = 94
         link.forEach(l => {
-            let link_title = l[0] === link[link.length - 1][0] ? l[0] : `${l[0]} |`
+            doc.setDrawColor(31, 93, 187)
+            doc.setTextColor(31, 93, 187)
             doc.setFontSize('11')
-            doc.textWithLink(link_title, link_x, resume_h, { url: l[1]})
+            doc.textWithLink(l[0], link_x, resume_h, { url: l[1]})
             let width = doc.getTextWidth(l[0])
-            link_x += (width + 3)
-            doc.line(link_x - width - 3, resume_h + 1, link_x - 3, resume_h + 1 )
+            link_x += (width + 1)
+            doc.line(link_x - width - 1, resume_h + 1, link_x - 1, resume_h + 1 )
+
+            if(l[0] !== link[link.length - 1][0]){
+                doc.setTextColor(0)
+                doc.text('|', link_x, resume_h)
+                let vertical_bar_w = doc.getTextWidth('|')
+                link_x += vertical_bar_w + 1
+            }
         })
         
         resume_h += doc.getTextDimensions('Software Engineer').h + space 
 
         // about
-        let about_paragraph = 'Full Stack Web Developer with a passion for learning new languages and technologies. Having arrived in the United States from Vietnam seven years ago, I have an understanding of different cultures and can easily adapt to any work environment. Not only do I thrive in helping others and being a part of a team, but I have strong problem-solving skills, meet deadlines and am able to deliver quality products for clients.'
         doc.setFontSize('10')
         doc.setTextColor(0)
         var about_lines = doc.splitTextToSize(about_paragraph, (pdfInMM-lMargin-rMargin))
@@ -65,26 +64,18 @@ class Resume extends Component {
 
         doc.setFontStyle('normal')
         doc.setFontSize('10')
-        let skill_paragraph = 'Ruby on Rails, JavaScript, ReactJS, Redux, HTML, CSS, Web API, JSON, Bootstrap, MySQL, Semantic UI, NodeJs, Express, MongoDB'
         let skill_lines = doc.splitTextToSize(skill_paragraph, (pdfInMM-lMargin-rMargin))
         doc.text(skill_lines , x , resume_h , {maxWidth: 180, align: "justify"})
 
         resume_h += doc.getTextDimensions(skill_lines).h + space 
 
         // Technical Project
-        doc.setFontSize('11')
-        doc.setFontStyle('bold')
-        doc.setLineWidth(2.0)
-        doc.text('TECHNICAL PROJECTS' , x , resume_h)
-        resume_h += doc.getTextDimensions('TECHNICAL SKILLS').h
-        doc.line(x, resume_h, 200, resume_h)
-        resume_h += 7
+        resume_h = this.resume_header(doc, 'TECHNICAL PROJECTS' , x , resume_h )
 
-        // dot = \u2022 Projects 
+        // Projects 
         const project_name = ['Vintage Village' , 'Movies' , 'League Tracker']
         const projects = my_projects.filter(p => project_name.includes(p.title))
 
-        // let project_h = 93
         projects.forEach(project => {
             let project_w = x
             doc.setFontStyle('bold')
@@ -120,47 +111,13 @@ class Resume extends Component {
             resume_h += doc.getTextDimensions(project.resume_description).h + 2
 
             doc.setFontStyle('normal')
-            project.details.forEach(detail => {
-                let detail_x = x + 3 
-                doc.setFontType('bold')
-                doc.setFontSize('14')
-                doc.text('\u2022 ' , detail_x , resume_h)
-                detail_x += doc.getTextWidth('\u2022 ')
-                doc.setFontType('normal')
-                doc.setFontSize('10')
-                doc.text(detail, detail_x, resume_h,{align: "left"})
-                resume_h += doc.getTextDimensions(detail).h + 1.5
-            })
+            resume_h = this.resume_list(doc , project.details , x ,resume_h) + 2
 
-            resume_h += 2
         })
 
         // Work Experience
         resume_h = this.resume_header(doc, 'WORK EXPERIENCE' , x , resume_h )
 
-        const work_experience = [
-            {
-                title: 'HEB',
-                location: 'Conroe, TX', 
-                date: 'March 2019 - April 2020' ,
-                position: 'Checker', 
-                details: [
-                    'Processed customer transactions of goods and services.',
-                    'Collected cash, check, or charge payment from customers and made change for cash transactions.', 
-                    'Maintained a 30 IPM (Item Per Minute) rate daily.'
-                ]
-            },
-            {
-                title: 'VillaSport',
-                location: 'Woodland, TX', 
-                date: 'June 2016 - January 2019' ,
-                position: 'Housekeeping Associate', 
-                details: [
-                    'Maintained and cleaned all club areas by following company standards.', 
-                    'Ensured the locker room was fully stocked with supplies for members.'
-                ]
-            }
-        ]
         work_experience.forEach(work => {
             doc.setFontStyle('bold')
             doc.setFontSize('10')
@@ -175,37 +132,11 @@ class Resume extends Component {
             doc.text(work.position , x , resume_h)
             resume_h += doc.getTextDimensions(work.position).h + 2
 
-            work.details.forEach(detail => {
-                let detail_x = x + 3
-                doc.setFontType('bold')
-                doc.setFontSize('14')
-                doc.text('\u2022 ' , detail_x , resume_h)
-                detail_x += doc.getTextWidth('\u2022 ')
-                doc.setFontType('normal')
-                doc.setFontSize('10')
-                doc.text(detail, detail_x, resume_h,{align: "left"})
-                resume_h += doc.getTextDimensions(detail).h + 1.5
-            })
-            resume_h += 2
+            resume_h = this.resume_list(doc , work.details , x ,resume_h) + 2
         })
 
         // Education
         resume_h = this.resume_header(doc, 'EDUCATION' , x , resume_h )
-
-        const educations = [
-            {
-                title: 'Flatiron School', 
-                location: 'Houston, TX', 
-                date: 'January 2020 - May 2020',
-                description: 'Full Stack Web Development, Ruby on Rails and JavaScript immersive program'
-            },
-            {
-                title: 'Lone Star Community College', 
-                location: 'Woodland, TX', 
-                date: 'January 2016 - May 2019',
-                description: 'Completed coursework towards an Associate’s Degree in Software Engineering'
-            }
-        ]
 
         educations.forEach(education => {
             let {title , date , location , description} = education
@@ -234,6 +165,22 @@ class Resume extends Component {
         resume_h += doc.getTextDimensions(title).h
         doc.line(x, resume_h, 200, resume_h)
         resume_h += 7
+        return resume_h
+    }
+
+    resume_list = (doc , lists , x , resume_h ) => {
+        // dot = \u2022 
+        lists.forEach(list => {
+            let list_x = x + 3
+            doc.setFontType('bold')
+            doc.setFontSize('14')
+            doc.text('\u2022 ' , list_x , resume_h)
+            list_x += doc.getTextWidth('\u2022 ')
+            doc.setFontType('normal')
+            doc.setFontSize('10')
+            doc.text(list, list_x, resume_h, {align: "left"})
+            resume_h += doc.getTextDimensions(list).h + 1.5
+        })
         return resume_h
     }
     render(){
