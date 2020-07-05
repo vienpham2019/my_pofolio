@@ -6,33 +6,33 @@ class Header extends Component {
             <header id="home">
                 <nav id="nav-wrap">
 
-                    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-                    <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+                    <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+                    <a className="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
-                    <ul id="nav" class="nav">
-                        <li class="current">
-                            <a class="smoothscroll" href="#home">
-                                <i class="fas fa-home"></i> Home
+                    <ul id="nav" className="nav">
+                        <li className="current">
+                            <a className="smoothscroll" href="#home">
+                                <i className="fas fa-home"></i> Home
                             </a>
                         </li>
                         <li>
-                            <a class="smoothscroll" href="#about">
-                                <i class="fas fa-address-card"></i> About
+                            <a className="smoothscroll" href="#about">
+                                <i className="fas fa-address-card"></i> About
                             </a>
                         </li>
                         <li>
-                            <a class="smoothscroll" href="#projects">
-                                <i class="fas fa-file"></i> Projects
+                            <a className="smoothscroll" href="#projects">
+                                <i className="fas fa-file"></i> Projects
                             </a>
                         </li>
                     </ul>
 
                 </nav> 
 
-                <div class="row banner">
-                    <div class="banner-text">
+                <div className="row banner">
+                    <div className="banner-text">
                         <h1 
-                            class="responsive-headline animate__animated animate__fadeInLeft"
+                            className="responsive-headline animate__animated animate__fadeInLeft"
                             style={{animationDuration: '2s'}}
                         >Hi. I'm Vien Pham</h1>
                         <h2 
@@ -42,35 +42,35 @@ class Header extends Component {
                         <hr />
                         <ul className="social">
                             <li 
-                                class="animate__animated animate__fadeInUpBig" 
+                                className="animate__animated animate__fadeInUpBig" 
                                 style={{animationDuration: '2s', animationDelay: '0.2s'}}
                             >
                                 <a href="https://medium.com/@vienpham2019" target="_">
-                                    <i class="fab fa-blogger-b"></i>
+                                    <i className="fab fa-blogger-b"></i>
                                 </a>
                             </li>
                             <li
-                                class="animate__animated animate__fadeInUpBig" 
+                                className="animate__animated animate__fadeInUpBig" 
                                 style={{animationDuration: '2s', animationDelay: '0.4s'}}
                             >
                                 <a href="https://www.linkedin.com/in/vien-pham-7529931a5/" target="_">
-                                    <i class="fa fa-linkedin"></i>
+                                    <i className="fa fa-linkedin"></i>
                                 </a>
                             </li>
                             <li
-                                class="animate__animated animate__fadeInUpBig" 
+                                className="animate__animated animate__fadeInUpBig" 
                                 style={{animationDuration: '2s', animationDelay: '0.6s'}}
                             >
                                 <a href="https://github.com/vienpham2019" target="_">
-                                    <i class="fab fa-github"></i>
+                                    <i className="fab fa-github"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <p class="scrolldown">
-                    <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+                <p className="scrolldown">
+                    <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
                 </p>
             </header>
         )

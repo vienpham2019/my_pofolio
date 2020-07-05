@@ -4,11 +4,11 @@ class Modal extends Component {
     render(){
         let {project} = this.props
         return(
-            <div id="modal" class="popup-modal mfp-hide">
+            <div id="modal" className="popup-modal mfp-hide">
 
-                <img class="scale-with-grid" src={require(`./${project.image}`)} alt="" />
+                <img className="scale-with-grid" src={require(`./${project.image}`)} alt="" />
 
-                <div class="description-box">
+                <div className="description-box">
                     <h4 
                         className="animate__animated animate__bounceInDown"
                         style={{animationDuration: '2s', animationDelay: '0.2s'}}
@@ -39,14 +39,14 @@ class Modal extends Component {
                     >Tools: {project.tools}</p>
                 </div>
 
-                <div class="link-box">
+                <div className="link-box">
                     <a href={project.github} target="_" style={{margin: '0 10px', fontSize: '1.2em'}}>
-                        <i class="fab fa-github"></i> Github
+                        <i className="fab fa-github"></i> Github
                     </a>
                     <a href={project.demo} target="_" style={{margin: '0 10px' , fontSize: '1.2em'}}>
-                        {project.video ? <i class="fas fa-video"></i> : <i class="fas fa-globe-americas"></i>}  Demo
+                        {project.video ? <i className="fas fa-video"></i> : <i className="fas fa-globe-americas"></i>}  Demo
                     </a>
-                    <a class="popup-modal-dismiss" style={{float: 'right'}}>Close</a>
+                    <a className="popup-modal-dismiss" style={{float: 'right'}}>Close</a>
                 </div>
 
             </div>

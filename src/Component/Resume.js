@@ -152,8 +152,8 @@ class Resume extends Component {
             resume_h += doc.getTextDimensions(description).h + 3
         })
 
-        doc.output('dataurlnewwindow')
-        // doc.save('Vien_Pham_Resume.pdf')
+        // doc.output('dataurlnewwindow')
+        doc.save('Vien_Pham_Resume.pdf')
     }
 
     resume_header = (doc , title , x , resume_h ) => {
@@ -185,9 +185,9 @@ class Resume extends Component {
     }
     render(){
         return(
-            <div className="columns">
-                <button onClick={() => this.downloadResume()}>
-                    <i class="fas fa-download"></i>  My Resume
+            <div className="columns download">
+                <button className="button" onClick={() => this.downloadResume()}>
+                    <i className="fas fa-download"></i>  Download Resume
                 </button>
             </div>
         )
