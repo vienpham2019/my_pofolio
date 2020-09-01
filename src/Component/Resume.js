@@ -152,8 +152,8 @@ class Resume extends Component {
             resume_h += doc.getTextDimensions(description).h + 3
         })
 
-        doc.output('dataurlnewwindow')
-        // doc.save('Vien_Pham_Resume.pdf')
+        // doc.output('dataurlnewwindow')
+        doc.save('Vien_Pham_Resume.pdf')
     }
 
     resume_header = (doc , title , x , resume_h ) => {
