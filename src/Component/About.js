@@ -6,7 +6,7 @@ class About extends Component {
         super()
         this.state = {
             skills_1: ["Ruby on Rails", "Javascript" , "NodeJs", "ExpressJs"],
-            skills_2: ["React/Redux", "HTML/CSS", "WebApi", "Frameworks (Bootstrap)"]
+            skills_2: ["ReactJS/Redux", "AngularJS/NgRx", "HTML/CSS", "RESTfull API", "Frameworks (Bootstrap)"]
         }
     }
     render(){

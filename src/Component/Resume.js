@@ -73,7 +73,7 @@ class Resume extends Component {
         resume_h = this.resume_header(doc, 'TECHNICAL PROJECTS' , x , resume_h )
 
         // Projects 
-        const project_name = ['Vintage Village' , 'Movies' , 'League Tracker']
+        const project_name = ['vShop.', 'Vintage Village' , 'Movies']
         const projects = my_projects.filter(p => project_name.includes(p.title))
 
         projects.forEach(project => {
@@ -152,8 +152,8 @@ class Resume extends Component {
             resume_h += doc.getTextDimensions(description).h + 3
         })
 
-        // doc.output('dataurlnewwindow')
-        doc.save('Vien_Pham_Resume.pdf')
+        doc.output('dataurlnewwindow')
+        // doc.save('Vien_Pham_Resume.pdf')
     }
 
     resume_header = (doc , title , x , resume_h ) => {
@@ -171,7 +171,7 @@ class Resume extends Component {
     resume_list = (doc , lists , x , resume_h ) => {
         // dot = \u2022 
         lists.forEach(list => {
-            let list_x = x + 3
+            let list_x = x
             doc.setFontType('bold')
             doc.setFontSize('14')
             doc.text('\u2022 ' , list_x , resume_h)
