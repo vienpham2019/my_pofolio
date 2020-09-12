@@ -6,7 +6,7 @@ class About extends Component {
         super()
         this.state = {
             skills_1: ["Ruby on Rails", "Javascript" , "NodeJs", "ExpressJs"],
-            skills_2: ["ReactJS/Redux", "AngularJS/NgRx", "HTML/CSS", "RESTfull API", "Frameworks (Bootstrap)"]
+            skills_2: ["ReactJS/Redux", "Angular/NgRx", "HTML/CSS", "RESTfull API", "Frameworks (Bootstrap)"]
         }
     }
     render(){
@@ -15,7 +15,7 @@ class About extends Component {
             <section id="about" style={{minHeight: '80vh'}}> 
                 <div className="row">
 
-                    <div className="nine columns main-col">
+                    <div>
 
                         <h2>About Me</h2>
 

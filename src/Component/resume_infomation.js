@@ -8,7 +8,7 @@ const link = [
 
 const about_paragraph = 'Full Stack Web Developer with a passion for learning new languages and technologies. Having arrived in the United States from Vietnam seven years ago, I have an understanding of different cultures and can easily adapt to any work environment. Not only do I thrive in helping others and being a part of a team, but I have strong problem-solving skills, meet deadlines and am able to deliver quality products for clients.'
 
-const skill_paragraph = 'Ruby on Rails, JavaScript, ReactJS, Redux, React Hooks, AngularJS, NgRx, HTML, CSS, RESTfull API, JSON, Bootstrap, MySQL, Semantic UI, NodeJs, Express, MongoDB, Git, GitHub'
+const skill_paragraph = 'Ruby on Rails, JavaScript, ReactJS, Redux, React Hooks, Angular, NgRx, HTML, CSS, RESTfull API, JSON, Bootstrap, MySQL, Semantic UI, NodeJs, Express, MongoDB, Git, GitHub'
 
 const work_experience = [
     {

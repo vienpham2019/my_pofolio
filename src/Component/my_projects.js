@@ -2,9 +2,9 @@ const my_projects = [
     {
         title: "vShop.", 
         description: "An activewear/accessories e-commerce site for men and women.",
-        details: ["Built client-side with AngularJS/NgRx.", "Utilized NodeJS with API endpoints for Fetch requests and MongoDB for data persistence." , "Styled frontend with Bootstrap and custom CSS." , "Deployed application on Heroku."], 
+        details: ["Built client-side with Angular/NgRx.", "Utilized NodeJS with API endpoints for Fetch requests and MongoDB for data persistence." , "Styled frontend with Bootstrap and custom CSS." , "Deployed application on Heroku."], 
         resume_description: "An activewear/accessories e-commerce site for men and women.",
-        tools: "AngularJS | NgRx | HTML | CSS | Bootstrap | NodeJS | Express | MongoDB",
+        tools: "Angular | NgRx | HTML | CSS | Bootstrap | NodeJS | Express | MongoDB",
         github: "https://github.com/vienpham2019/vShop.",
         demo: "https://v--shop.herokuapp.com/",
         video: false,
